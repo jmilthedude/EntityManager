@@ -1,0 +1,21 @@
+name: EntityManager
+main: net.thedudemc.entitymanager.EntityManager
+version: 1.3
+api-version: 1.14
+commands:
+  count:
+    description: Counts entities.
+    usage: /count
+    default: op
+  safekill:
+    description: Safely removes entities.
+    usage: /safekill
+    default: op
+  players:
+    description: Displays players and dimensions.
+    usage: /players
+    default: op
+  chunks:
+    description: Counts entities and gets most populated chunks.
+    usage: /chunks
+    default: op
