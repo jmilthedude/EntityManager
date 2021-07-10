@@ -22,8 +22,11 @@ public class PlayersCommand extends PluginCommand {
     @Override
     public Message execute(CommandSender sender, String[] args) {
         Message response = Message.create();
+
         if (args.length < 1) {
             List<Entity> players = EntityUtils.getEntities(SearchType.TYPE, "player", 0, null);
+
+            response.colorize(ChatColor.GRAY).append("Name - Entity Count - Item Count - Dimension - Coordinates").newLine();
 
             players.forEach(player -> {
                 AtomicInteger itemCount = new AtomicInteger();
@@ -41,8 +44,7 @@ public class PlayersCommand extends PluginCommand {
                     }
                 });
 
-                response.colorize(ChatColor.GRAY).append("Name - Entity Count - Item Count - Dimension - Coordinates").newLine()
-                        .colorize(teamColor).append(name).resetColor()
+                response.colorize(teamColor).append(name).resetColor()
                         .append(" - E: ")
                         .colorize(ChatColor.YELLOW).append(String.valueOf(entityCount.get()))
                         .resetColor().append(" - I: ")
